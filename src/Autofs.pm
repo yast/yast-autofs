@@ -51,7 +51,7 @@ our %TYPEINFO;
 our $VERSION="1.0.0";
 
 YaST::YCP::Import ("Progress");
-YaST::YCP::Import ("Report");
+YaST::YCP::Import ("Popup");
 YaST::YCP::Import ("Summary");
 YaST::YCP::Import ("Message");
 YaST::YCP::Import ("Ldap");
@@ -208,13 +208,13 @@ sub CheckLDAP
 	if( ! $ldapMap->{base_config_dn} )
 	{
 	   y2milestone("------LDAP_CLIENT_NOT_CONFIGURED------");
-	   return $self->SetError( summary => __("The system is not configured as LDAP client."),
+	   return YaPI->SetError( summary => __("The system is not configured as LDAP client."),
 	                           code   => "LDAP_CLIENT_NOT_CONFIGURED" );
 	}
 	if( $ldapMap->{ldap_server} eq 'localhost' || $ldapMap->{ldap_server} eq '127.0.0.1' )
 	{
 	   y2milestone("------UNSUITABLE_LDAP_SERVER------");
-	   return $self->SetError( summary => __("The localhost can not be LDAP server for autofs."),
+	   return YaPI->SetError( summary => __("The localhost can not be LDAP server for autofs."),
 	                           code    => "UNSUITABLE_LDAP_SERVER" );
 	}
 	$LDAPServer = $ldapMap->{ldap_server};
@@ -230,7 +230,7 @@ sub CheckLDAP
 	if( ! $success )
 	{
 	   y2milestone("------CAN_NOT_BIND_LDAP------");
-	   return $self->SetError( summary => __("Faild to bind to the LDAP server."),
+	   return YaPI->SetError( summary => __("Faild to bind to the LDAP server."),
 	                           code    => "CAN_NOT_BIND_LDAP"  );
 	}
 
@@ -277,7 +277,7 @@ sub CreateAutoFSBase
 	{
 	   return Boolean(1);
 	}
-	return $self->SetError( summary => __("Failed to create the autofs base objects."),
+	return YaPI->SetError( summary => __("Failed to create the autofs base objects."),
 	                        code    => "CREATE_AUTOFSBASE_FAILED" );
 }
 
@@ -313,7 +313,7 @@ sub AddMapToLDAP
 	{
 	   return Boolean(1);
 	}
-	return $self->SetError( summary => __("Failed to create the new map."),
+	return YaPI->SetError( summary => __("Failed to create the new map."),
 	                        code    => "CREATE_MAP_FAILED" );
 }
 
@@ -337,7 +337,7 @@ sub DelMapFromLDAP
 	{
 	   return Boolean(1);
 	}
-	return $self->SetError( summary => __("Failed to delete an autofs map."),
+	return YaPI->SetError( summary => __("Failed to delete an autofs map."),
 	                        code    => "DELETE_MAP_FAILED" );
 }
 
@@ -366,7 +366,7 @@ sub AddEntryToLDAP
 	         );
 	if( ! $success )
 	{
-	   return $self->SetError( summary => __("Failed to add an autofs entry to map.")." : ".$map,
+	   return YaPI->SetError( summary => __("Failed to add an autofs entry to map.")." : ".$map,
 	                           code    => "ADD_ENTRY_FAILED" );
 	}
 	$Maps->{$map}->{'dns'}->{$dn} = 1;
@@ -395,7 +395,7 @@ sub ModifyEntryInLDAP
 	         );
 	if( ! $success )
 	{
-	   return $self->SetError( summary => __("Failed to modify an autofs entry in map.")." : ".$map,
+	   return YaPI->SetError( summary => __("Failed to modify an autofs entry in map.")." : ".$map,
 	                           code    => "MODIFY_ENTRY_FAILED" );
 	}
 	return Boolean(1);
@@ -579,14 +579,34 @@ sub Read {
 	# Error message
 	if(! $self->CheckLDAP())
 	{
-	    Report::Error(__("LDAP configuration is corrupt."));
+	    my $ERROR = __("LDAP configuration is corrupt.");
+	    my $error = YaPI->Error;
+	    if(defined $error->{description} && $error->{description} ne "")
+	    {
+	      $ERROR .= "\n".$error->{description};
+	    }  
+	    if(defined $error->{summary} && $error->{summary} ne "")
+	    {
+	      $ERROR .= "\n".$error->{summary};
+	    }  
+	    return Popup->Error($ERROR);
 	}
 	# read database
 	Progress::NextStage();
 	# Error message
 	if(! $self->ReadMaps())
 	{
-	    Report::Error(__("Cannot read the autofs maps."));
+	    my $ERROR = __("Cannot read the autofs maps.");
+	    my $error = YaPI->Error;
+	    if(defined $error->{description} && $error->{description} ne "")
+	    {
+	      $ERROR .= "\n".$error->{description};
+	    }  
+	    if(defined $error->{summary} && $error->{summary} ne "")
+	    {
+	      $ERROR .= "\n".$error->{summary};
+	    }  
+	    return Popup->Error($ERROR);
 	}
 	sleep($sl);
 	
@@ -634,7 +654,7 @@ sub Write {
 	# Error message
 	if(! $self->WriteAutofsMapsToLDAP())
 	{
-	    Report::Error (__("Cannot write the autofs maps."));
+	    Popup->Error (__("Cannot write the autofs maps."));
 	}
 	sleep($sl);
 	
