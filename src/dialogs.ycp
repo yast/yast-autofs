@@ -276,6 +276,9 @@ define any ConfigureDialog () ``{
     Wizard::SetContentsButtons(caption, contents, HELPS["c1"]:"",
 	    Label::BackButton(), Label::NextButton());
 
+    Wizard::SetNextButton(`next, Label::FinishButton() );
+    UI::ChangeWidget (`id (`back), `Enabled, false);
+
     string actmap = "";
     // preselect an item - convenience, button enabling
     if (size(LMaps) > 0)

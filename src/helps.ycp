@@ -54,63 +54,35 @@ Please wait...<br></p>
     /* Write dialog help 2/2 */
 _("<p><b><big>Aborting Saving:</big></b><br>
 Abort the save procedure by pressing <b>Abort</b>.
-An additional dialog informs whether it is safe to do so.
 </p>
 "),
 
-    /* Summary dialog help 1/3 */
-    "summary" : _("<p><b><big>Autofs Configuration</big></b><br>
-Configure autofs here.<br></p>
-") +
-
-    /* Summary dialog help 2/3 */
-    _("<p><b><big>Adding a autofs:</big></b><br>
-Choose an autofs from the list of detected autofss.
-If your autofs was not detected, use <b>Other (not detected)</b>.
-Then press <b>Configure</b>.</p>
-") +
-
-    /* Summary dialog help 3/3 */
-    _("<p><b><big>Editing or Deleting:</big></b><br>
-If you press <b>Edit</b>, an additional dialog in which to change
-the configuration opens.</p>
-"),
-
-    /* Ovreview dialog help 1/3 */
-    "overview" : _("<p><b><big>Autofs Configuration Overview</big></b><br>
-Obtain an overview of installed autofss. Additionally
-edit their configurations.<br></p>
-") +
-
-    /* Ovreview dialog help 2/3 */
-_("<p><b><big>Adding a autofs:</big></b><br>
-Press <b>Add</b> to configure a autofs.</p>") +
-
-    /* Ovreview dialog help 3/3 */
-_("<p><b><big>Editing or Deleting:</big></b><br>
-Choose a autofs to change or remove.
-Then press <b>Edit</b> or <b>Delete</b> as desired.</p>
-"),
-
-    /* Configure1 dialog help 1/2 */
-    "c1" : _("<p><b><big>Configuration Part One</big></b><br>
-Press <b>Next</b> to continue.
+    /* Configure1 dialog help 1/4 */
+    "c1" : _("<p><b><big>Automounter Maps</big></b><br>
+The automounter maps are maps referred to by the master
+map of the automounter. The automounter maps entries describe how
+file systems below the mountpoint of the map are to be mounted.
 <br></p>") +
 
-    /* Configure1 dialog help 2/2 */
-_("<p><b><big>Selecting Something</big></b><br>
-It is not possible. You must code it first. :-)
-</p>"),
+    /* Configure1 dialog help 2/4 */
+_("<p><b><big>Key</big></b><br>
+This is the part of the pathname between the map mountpoint and
+the path into the filesystem mounted.
+</p>") +
 
-    /* Configure2 dialog help 1/2 */
-    "c2" : _("<p><b><big>Configuration Part Two</big></b><br>
-Press <b>Next</b> to continue.
+    /* Configure1 dialog help 3/4 */
+_("<p><b><big>Options</big></b><br>
+Options are optional. The options are a list of comma separated
+options as customary for the <b>mount</b>(8) command.
 <br></p>
 ") +
 
-    /* Configure2 dialog help 2/2 */
-_("<p><b><big>Selecting Something</big></b><br>
-It is not possible. You must code it first. :-)
+    /* Configure1 dialog help 4/4 */
+_("<p><b><big>Location</big></b><br>
+The location specifies from where the file system is to be mounted.
+For an NFS volume the usual notation is host:pathname.
+If the filesystem to be mounted begins with a '/' (such as local
+entries or smbfs shares) a ':' needs to be prefixed.
 </p>"),
 
 ];
