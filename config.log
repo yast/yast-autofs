@@ -27,11 +27,18 @@ hostinfo               = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
-PATH: /usr/sbin
-PATH: /bin
+PATH: /suse/varkoly/bin
+PATH: /usr/local/bin
 PATH: /usr/bin
-PATH: /sbin
 PATH: /usr/X11R6/bin
+PATH: /bin
+PATH: /usr/games
+PATH: /opt/gnome/bin
+PATH: /opt/kde3/bin
+PATH: /usr/lib/jvm/jre/bin
+PATH: /usr/lib/mit/bin
+PATH: /usr/lib/mit/sbin
+PATH: /usr/lib/qt3/bin
 
 
 ## ----------- ##
@@ -49,7 +56,7 @@ configure:1455: result: /usr/bin/install -c
 configure:1466: checking whether build environment is sane
 configure:1509: result: yes
 configure:1561: checking for gawk
-configure:1577: found /bin/gawk
+configure:1577: found /usr/bin/gawk
 configure:1587: result: gawk
 configure:1597: checking whether make sets $(MAKE)
 configure:1617: result: yes
@@ -109,8 +116,8 @@ config.status:705: creating src/Makefile
 
 ac_cv_build=i686-suse-linux
 ac_cv_build_alias=i686-suse-linux
-ac_cv_env_PKG_CONFIG_PATH_set=
-ac_cv_env_PKG_CONFIG_PATH_value=
+ac_cv_env_PKG_CONFIG_PATH_set=set
+ac_cv_env_PKG_CONFIG_PATH_value=/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/opt/kde3/lib/pkgconfig:/opt/gnome/lib/pkgconfig:/opt/gnome/lib/pkgconfig:/opt/gnome/share/pkgconfig
 ac_cv_env_build_alias_set=
 ac_cv_env_build_alias_value=
 ac_cv_env_host_alias_set=
@@ -134,11 +141,11 @@ am_cv_prog_tar_ustar=gnutar
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run aclocal-1.9'
-AMTAR='${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run tar'
-AUTOCONF='${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run autoconf'
-AUTOHEADER='${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run autoheader'
-AUTOMAKE='${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run automake-1.9'
+ACLOCAL='${SHELL} /SPACE/svn/trunk/autofs/missing --run aclocal-1.9'
+AMTAR='${SHELL} /SPACE/svn/trunk/autofs/missing --run tar'
+AUTOCONF='${SHELL} /SPACE/svn/trunk/autofs/missing --run autoconf'
+AUTOHEADER='${SHELL} /SPACE/svn/trunk/autofs/missing --run autoheader'
+AUTOMAKE='${SHELL} /SPACE/svn/trunk/autofs/missing --run automake-1.9'
 AWK='gawk'
 CREATE_PKGCONFIG_FALSE=''
 CREATE_PKGCONFIG_NOARCH_FALSE=''
@@ -158,7 +165,7 @@ LIBS=''
 LN_S='ln -s'
 LTLIBOBJS=''
 MAINTAINER='Peter Varkoly <varkoly@novell.com>'
-MAKEINFO='${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run makeinfo'
+MAKEINFO='${SHELL} /SPACE/svn/trunk/autofs/missing --run makeinfo'
 PACKAGE='yast2-autofs'
 PACKAGE_BUGREPORT='http://bugs.opensuse.org/'
 PACKAGE_NAME='yast2-autofs'
@@ -166,7 +173,7 @@ PACKAGE_STRING='yast2-autofs 2.13.0'
 PACKAGE_TARNAME='yast2-autofs'
 PACKAGE_VERSION='2.13.0'
 PATH_SEPARATOR=':'
-PKG_CONFIG_PATH=''
+PKG_CONFIG_PATH='/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/opt/kde3/lib/pkgconfig:/opt/gnome/lib/pkgconfig:/opt/gnome/lib/pkgconfig:/opt/gnome/share/pkgconfig'
 RPMNAME='yast2-autofs'
 SET_MAKE=''
 SHELL='/bin/sh'
@@ -207,7 +214,7 @@ host_vendor='suse'
 imagedir='${prefix}/share/YaST2/images'
 includedir='${prefix}/include/YaST2'
 infodir='${prefix}/info'
-install_sh='/var/lib/SPACE/svn/trunk/autofs/install-sh'
+install_sh='/SPACE/svn/trunk/autofs/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${prefix}/share/YaST2/locale'

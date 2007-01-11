@@ -70,11 +70,11 @@ yncludeDATA_INSTALL = $(INSTALL_DATA)
 DATA = $(client_DATA) $(desktop_DATA) $(module_DATA) $(modulebin_DATA) \
 	$(ynclude_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run aclocal-1.9
-AMTAR = ${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run tar
-AUTOCONF = ${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run autoconf
-AUTOHEADER = ${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run autoheader
-AUTOMAKE = ${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run automake-1.9
+ACLOCAL = ${SHELL} /SPACE/svn/trunk/autofs/missing --run aclocal-1.9
+AMTAR = ${SHELL} /SPACE/svn/trunk/autofs/missing --run tar
+AUTOCONF = ${SHELL} /SPACE/svn/trunk/autofs/missing --run autoconf
+AUTOHEADER = ${SHELL} /SPACE/svn/trunk/autofs/missing --run autoheader
+AUTOMAKE = ${SHELL} /SPACE/svn/trunk/autofs/missing --run automake-1.9
 AWK = gawk
 CREATE_PKGCONFIG_FALSE = 
 CREATE_PKGCONFIG_NOARCH_FALSE = 
@@ -94,7 +94,7 @@ LIBS =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINTAINER = Peter Varkoly <varkoly@novell.com>
-MAKEINFO = ${SHELL} /var/lib/SPACE/svn/trunk/autofs/missing --run makeinfo
+MAKEINFO = ${SHELL} /SPACE/svn/trunk/autofs/missing --run makeinfo
 PACKAGE = yast2-autofs
 PACKAGE_BUGREPORT = http://bugs.opensuse.org/
 PACKAGE_NAME = yast2-autofs
@@ -102,7 +102,7 @@ PACKAGE_STRING = yast2-autofs 2.13.0
 PACKAGE_TARNAME = yast2-autofs
 PACKAGE_VERSION = 2.13.0
 PATH_SEPARATOR = :
-PKG_CONFIG_PATH = 
+PKG_CONFIG_PATH = /usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/opt/kde3/lib/pkgconfig:/opt/gnome/lib/pkgconfig:/opt/gnome/lib/pkgconfig:/opt/gnome/share/pkgconfig
 RPMNAME = yast2-autofs
 SET_MAKE = 
 SHELL = /bin/sh
@@ -143,7 +143,7 @@ host_vendor = suse
 imagedir = ${prefix}/share/YaST2/images
 includedir = ${prefix}/include/YaST2
 infodir = ${prefix}/info
-install_sh = /var/lib/SPACE/svn/trunk/autofs/install-sh
+install_sh = /SPACE/svn/trunk/autofs/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${prefix}/share/YaST2/locale
@@ -175,9 +175,7 @@ ydatadir = ${prefix}/share/YaST2/data
 yncludedir = ${prefix}/share/YaST2/include/autofs
 ystartupdir = ${prefix}/lib/YaST2
 client_DATA = \
-	autofs.ycp		\
-	autofs_auto.ycp	\
-	autofs_proposal.ycp
+	autofs.ycp		
 
 ynclude_DATA = \
 	helps.ycp		\
