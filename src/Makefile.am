@@ -3,9 +3,7 @@
 yncludedir = @yncludedir@/autofs
 
 client_DATA =			\
-	autofs.ycp		\
-	autofs_auto.ycp	\
-	autofs_proposal.ycp
+	autofs.ycp		
 
 ynclude_DATA =			\
 	helps.ycp		\

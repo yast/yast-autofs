@@ -24,8 +24,7 @@ Summary:	Configuration of autofs
 %dir @yncludedir@/autofs
 @yncludedir@/autofs/*
 @clientdir@/autofs.ycp
-@clientdir@/autofs_*.ycp
+#@clientdir@/autofs_*.ycp
 @moduledir@/Autofs.*
-@moduledir@/Autofs2.*
 @desktopdir@/autofs.desktop
 %doc @docdir@

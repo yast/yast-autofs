@@ -208,7 +208,9 @@ sub CheckLDAP
 	if( ! $ldapMap->{base_config_dn} )
 	{
 	   y2milestone("------LDAP_CLIENT_NOT_CONFIGURED------");
-	   return YaPI->SetError( summary => __("The system is not configured as LDAP client."),
+	   return YaPI->SetError( summary => __("You must configure LDAP to use the autofs modul.").
+					     "\n".
+					     __("You can do it by using the YaST2 ldap modul."),
 	                           code   => "LDAP_CLIENT_NOT_CONFIGURED" );
 	}
 	if( $ldapMap->{ldap_server} eq 'localhost' || $ldapMap->{ldap_server} eq '127.0.0.1' )
@@ -579,7 +581,7 @@ sub Read {
 	# Error message
 	if(! $self->CheckLDAP())
 	{
-	    my $ERROR = __("LDAP configuration is corrupt.");
+	    my $ERROR = __("LDAP configuration error.");
 	    my $error = YaPI->Error;
 	    if(defined $error->{description} && $error->{description} ne "")
 	    {
