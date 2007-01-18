@@ -340,7 +340,7 @@ sub DelMapFromLDAP
 	   return Boolean(1);
 	}
 	return YaPI->SetError( summary => __("Failed to delete an autofs map."),
-	                        code    => "DELETE_MAP_FAILED" );
+	                        code   => "DELETE_MAP_FAILED" );
 }
 
 ##
@@ -431,7 +431,7 @@ sub ReadMaps
 	  $Maps->{$1}->{dns}     = {};
 	  $self->ReadEntriesOfMap($1);
 	}
-	return $count;
+	return 1;
 }
 
 ##
@@ -482,14 +482,15 @@ sub WriteAutofsMapsToLDAP
 
 	foreach my $map (keys %{$Maps})
 	{
-	   if( $Maps->{$map}->{'deleted'} )
+	   if( $Maps->{$map}->{'deleted'}  && $Maps->{$map}->{'dn'} ne "" )
 	   { # Remove map
 	      $self->DelMapFromLDAP($map);
 	      next;
 	   }
-	   if( $Maps->{$map}->{'dn'} eq "" )
+	   if( !$Maps->{$map}->{'deleted'} && $Maps->{$map}->{'dn'} eq ""  )
 	   { # Add a new map
 	      $self->AddMapToLDAP($map);
+	      next;
 	   }
 	   foreach my $entry (@{$Maps->{$map}->{entries}})
 	   {
@@ -512,6 +513,7 @@ sub WriteAutofsMapsToLDAP
 	      }
 	   }
 	}
+	return 1;
 }
 
 ##
