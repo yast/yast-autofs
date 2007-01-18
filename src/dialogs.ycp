@@ -43,7 +43,7 @@ include "autofs/helps.ycp";
  * @return          a ui table list on items
  */
 define list<term> TableItems(list<map<string,string> > entries) ``{
-y2milestone("Entries %1", entries);
+	//y2milestone("Entries %1", entries);
 	if( entries == nil )
 	{
 		return [];
