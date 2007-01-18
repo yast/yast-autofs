@@ -224,7 +224,7 @@ sub CheckLDAP
 	# Now we initalize the ldap connection
 	y2milestone("------Init LDAP------");
 	Ldap->LDAPInit();
-	$AUTOFSBase     = "ou=AUTOFS,".$ldapMap->{ldap_domain};
+	$AUTOFSBase     = "ou=autofs,".$ldapMap->{ldap_domain};
 	$AutoMasterBase = "nisMapName=auto.master,".$AUTOFSBase;
 	
 	# Now we make the ldap bind
@@ -266,7 +266,7 @@ sub CreateAutoFSBase
 	$success = SCR->Write(".ldap.add", { "dn" => $AUTOFSBase } ,
 	                        {
 	                          "objectClass" => "organizationalUnit",
-	                          "ou"          => "AUTOFS"
+	                          "ou"          => "autofs"
 	                        }
 	          );
 	$success = SCR->Write(".ldap.add", { "dn" => $AutoMasterBase },
@@ -490,7 +490,6 @@ sub WriteAutofsMapsToLDAP
 	   if( !$Maps->{$map}->{'deleted'} && $Maps->{$map}->{'dn'} eq ""  )
 	   { # Add a new map
 	      $self->AddMapToLDAP($map);
-	      next;
 	   }
 	   foreach my $entry (@{$Maps->{$map}->{entries}})
 	   {
