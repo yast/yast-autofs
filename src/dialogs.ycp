@@ -114,7 +114,13 @@ define map<string, string> EntryDialog (map<string, string> Entry) ``{
         if( Entry == $[] )
 	{
 	  UI::OpenDialog(`opt(`decorated),
-		       `HBox(`HSpacing(1),
+		       `HBox(
+			     `MinWidth( 25,
+				`ReplacePoint(`id(`Help),
+			            `RichText(`id(`HelpText), HELPS["EntryDialogNFS"]:"")
+				)
+			      ),
+			     `HSpacing(1),
 			     `VBox(`VSpacing(0.2),
 				   `HSpacing (30),
 				   `Frame(_("Type"),
@@ -138,7 +144,8 @@ define map<string, string> EntryDialog (map<string, string> Entry) ``{
 				   // ok pushbutton: confirm the dialog
 				   `HBox(`PushButton(`id(`ok),     Label::OKButton()),
 					 `PushButton(`id(`cancel), Label::CancelButton())),
-				   `VSpacing(0.2)),
+				   `VSpacing(0.2)
+				),
 			     `HSpacing(1)
 			   )
 		        );
@@ -179,6 +186,9 @@ define map<string, string> EntryDialog (map<string, string> Entry) ``{
 			     `TextEntry(`id(`location2), _("Path"),    "")
 			)
 		);
+		UI::ReplaceWidget(`id(`Help),
+			        `RichText(`id(`HelpText), HELPS["EntryDialogNFS"]:"")
+		);
 		continue;
 	    }
 	    else if( ret == `samba )
@@ -187,8 +197,11 @@ define map<string, string> EntryDialog (map<string, string> Entry) ``{
 			`VBox(
 			     `TextEntry(`id(`options),   _("Options"), "-fstype=cifs"),
 			     `TextEntry(`id(`location1), _("Server"),  ""),
-			     `TextEntry(`id(`location2), _("Path"),    "")
+			     `TextEntry(`id(`location2), _("Share"),    "")
 			)
+		);
+		UI::ReplaceWidget(`id(`Help),
+			        `RichText(`id(`HelpText), HELPS["EntryDialogSAMBA"]:"")
 		);
 		continue;
 	    }
@@ -199,6 +212,9 @@ define map<string, string> EntryDialog (map<string, string> Entry) ``{
 			     `TextEntry(`id(`options),  _("Options"),  ""),
 			     `TextEntry(`id(`location), _("Location"), "")
 			)
+		);
+		UI::ReplaceWidget(`id(`Help),
+			        `RichText(`id(`HelpText), HELPS["EntryDialogOther"]:"")
 		);
 		continue;
 	    }
@@ -273,7 +289,7 @@ define any ConfigureDialog () ``{
                  )
 	   );
 
-    Wizard::SetContentsButtons(caption, contents, HELPS["c1"]:"",
+    Wizard::SetContentsButtons(caption, contents, HELPS["ConfigureDialog"]:"",
 	    Label::BackButton(), Label::NextButton());
 
     Wizard::SetNextButton(`next, Label::FinishButton() );
