@@ -268,7 +268,7 @@ define any ConfigureDialog () ``{
 	    `Table(`id(`entries), `header(_("Key"),_("Options"),_("Location")),[]),
 	    `HBox(
                   `PushButton(`id(`addentry), _("Add")),
-                  `PushButton(`id(`modentry), _("Edit")),
+//                  `PushButton(`id(`modentry), _("Edit")),
                   `PushButton(`id(`delentry), _("Delete"))
                  )
 	   );
