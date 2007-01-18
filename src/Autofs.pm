@@ -425,7 +425,7 @@ sub ReadMaps
 	foreach my $dn (@{$all})
 	{
 		$count++;
-	  $dn =~ /nisMapName=auto\.(.*),$AUTOFSBase/;
+	  $dn =~ /nisMapName=auto\.(.*),$AUTOFSBase/i;
 	  $Maps->{$1}->{dn}      = $dn;
 	  $Maps->{$1}->{entries} = [];
 	  $Maps->{$1}->{dns}     = {};
