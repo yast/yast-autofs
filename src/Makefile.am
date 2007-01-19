@@ -15,7 +15,8 @@ desktop_DATA =			\
 	autofs.desktop
 
 module_DATA =			\
-	Autofs.pm		
+	Autofs.pm		\
+	AutofsUI.ycp
 
 # create a symlink for local build, #145327
 autofs:

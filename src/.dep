@@ -1,0 +1,5 @@
+AutofsUI.ybc: \
+	/usr/share/YaST2/modules/Label.ybc \
+	/usr/share/YaST2/modules/Popup.ybc \
+	./autofs/helps.ycp
+

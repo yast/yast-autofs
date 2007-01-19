@@ -187,7 +187,8 @@ desktop_DATA = \
 	autofs.desktop
 
 module_DATA = \
-	Autofs.pm		
+	Autofs.pm		\
+	AutofsUI.ycp
 
 ycpchook = autofs
 EXTRA_DIST = $(client_DATA) $(ynclude_DATA) $(module_DATA) $(desktop_DATA)
