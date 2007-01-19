@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Jan 19 15:09:29 CET 2007 - varkoly@suse.de
+
+- Enhancing the help textes
+- Fixing bug for handling the return values of the funktions
+
+-------------------------------------------------------------------
 Mon Dec 18 09:14:04 2006 - varkoly@novell.com
 
 - initial version
