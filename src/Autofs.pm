@@ -56,6 +56,7 @@ YaST::YCP::Import ("Summary");
 YaST::YCP::Import ("Message");
 YaST::YCP::Import ("Ldap");
 YaST::YCP::Import ("SCR");
+YaST::YCP::Import ("AutofsUI");
 
 ##
  # Data was modified?
@@ -213,13 +214,18 @@ sub CheckLDAP
 					     __("You can do it by using the YaST2 ldap modul."),
 	                           code   => "LDAP_CLIENT_NOT_CONFIGURED" );
 	}
-	if( $ldapMap->{ldap_server} eq 'localhost' || $ldapMap->{ldap_server} eq '127.0.0.1' )
-	{
-	   y2milestone("------UNSUITABLE_LDAP_SERVER------");
-	   return YaPI->SetError( summary => __("The localhost can not be LDAP server for autofs."),
-	                           code    => "UNSUITABLE_LDAP_SERVER" );
-	}
 	$LDAPServer = $ldapMap->{ldap_server};
+	if( $LDAPServer eq 'localhost' || $LDAPServer eq '127.0.0.1' )
+	{
+	   $LDAPServer = `cat /etc/HOSTNAME`; chomp $LDAPServer;
+	   $LDAPServer = AutofsUI->GetLDAPServer($LDAPServer);
+	   if( $LDAPServer eq 'no' )
+	   {
+	       y2milestone("------UNSUITABLE_LDAP_SERVER------");
+	       return YaPI->SetError( summary => __("The localhost can not be LDAP server for autofs."),
+	                           code    => "UNSUITABLE_LDAP_SERVER" );
+	   }
+	}
 	
 	# Now we initalize the ldap connection
 	y2milestone("------Init LDAP------");
