@@ -40,7 +40,7 @@
                 else continue;
             }
             else if(ret == `ok) {
-                ldapserver = (string) UI::QueryWidget(`id(`mapname), `Value);
+                ldapserver = (string) UI::QueryWidget(`id(`ldapserver), `Value);
                 break;
             }
             else {
