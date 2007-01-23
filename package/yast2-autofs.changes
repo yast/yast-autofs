@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Tue Jan 23 11:22:57 CET 2007 - varkoly@suse.de
+
+- Bugfix: bad widget id in QueryWidget
+
+-------------------------------------------------------------------
 Fri Jan 19 15:09:29 CET 2007 - varkoly@suse.de
 
 - Enhancing the help textes
