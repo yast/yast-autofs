@@ -43,7 +43,7 @@ use YaPI;
 
 ###
 # Debug only;
-use Data::Dumper;
+# use Data::Dumper;
 
 textdomain("autofs");
 
@@ -154,7 +154,6 @@ sub AddEntry {
 	my $entry = shift;
 	y2milestone("------AddEntry------");
 	push @{$Maps->{$name}->{'entries'}} , $entry;
-print Dumper($Maps);
 }
 
 ##
