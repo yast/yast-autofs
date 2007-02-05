@@ -1,0 +1,121 @@
+/* ------------------------------------------------------------------------------
+ * Copyright (c) 2006 Novell, Inc. All Rights Reserved.
+ *
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of version 2 of the GNU General Public License as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, contact Novell, Inc.
+ *
+ * To contact Novell about this file by physical or electronic mail, you may find
+ * current contact information at www.novell.com.
+ * ------------------------------------------------------------------------------
+ */
+
+/**
+ * File:	include/autofs/helps.ycp
+ * Package:	Configuration of autofs
+ * Summary:	Help texts of all the dialogs
+ * Authors:	Peter Varkoly <varkoly@novell.com>
+ *
+ * $Id: helps.ycp 27914 2006-02-13 14:32:08Z locilka $
+ */
+
+{
+
+textdomain "autofs";
+
+/**
+ * All helps are here
+ */
+map HELPS = $[
+
+    /* Read dialog help 1/2 */
+    "read" : _("<p><b><big>Initializing autofs Configuration</big></b><br>
+Please wait...<br></p>
+") +
+
+    /* Read dialog help 2/2 */
+    _("<p><b><big>Aborting Initialization:</big></b><br>
+Safely abort the configuration utility by pressing <b>Abort</b> now.</p>
+"),
+
+    /* Write dialog help 1/2 */
+    "write" : _("<p><b><big>Saving autofs Configuration</big></b><br>
+Please wait...<br></p>
+") +
+
+    /* Write dialog help 2/2 */
+_("<p><b><big>Aborting Saving:</big></b><br>
+Abort the save procedure by pressing <b>Abort</b>.
+</p>
+"),
+
+    /* Configure dialog help 1/4 */
+    "ConfigureDialog" : _("<p><b><big>Automounter Maps</big></b><br>
+The automounter maps are maps referred to by the master
+map of the automounter. The automounter maps entries describe how
+file systems below the mountpoint of the map are to be mounted.
+<br></p>") +
+
+    /* Configure dialog help 2/4 */
+_("<p><b><big>Key</big></b><br>
+This is the part of the pathname between the map mountpoint and
+the path into the filesystem mounted.
+</p>") +
+
+    /* Configure dialog help 3/4 */
+_("<p><b><big>Options</big></b><br>
+Options are optional. The options are a list of comma separated
+options as customary for the <b>mount</b>(8) command.
+<br></p>
+") +
+
+    /* Configure dialog help 4/4 */
+_("<p><b><big>Location</big></b><br>
+The location specifies from where the file system is to be mounted.
+For an NFS volume the usual notation is host:pathname.
+If the filesystem to be mounted begins with a '/' (such as local
+entries or smbfs shares) a ':' needs to be prefixed.
+</p>"),
+
+    /* EntryDialog for NFS entry */
+    "EntryDialogNFS" : _("<p><b><big>NFS Entry</big></b><br>
+In case of NFS entry the <b>Server</b> is the DNS-name or IP-address of the NFS-server.<br>
+The <b>Path</p> ist the absolute pfad of the directory on the NFS-server.<br>
+The <b>Options</b> must be valid options of the <b>mount</b>(8) command for NFS file system.<br>
+<br></p>"),
+
+    /* EntryDialog for SAMBA entry */
+    "EntryDialogSAMBA" : _("<p><b><big>SAMBA Entry</big></b><br>
+In case of SAMBA entry the <b>Server</b> is the DNS-name or IP-address of the SAMBA-server.<br>
+The <b>Share</p> ist the name of the share to be mounted.<br>
+The <b>Options</b> must be valid options of the <b>mount</b>(8) command for SMB/CIFS file system<br>
+<br></p>"),
+
+    /* EntryDialog for Other entry */
+    "EntryDialogOther" : _("<p><b><big>Other Entry</big></b><br>
+Options are optional. The options are a list of comma separated
+options as customary for the <b>mount</b>(8) command.<br>
+The location specifies from where the file system is to be mounted.
+Please consult <b>autofs</b>(5) for more information.
+<br></p>"),
+
+    /* GetLDAPServer dialog if the ldapserver is localhost */
+    "GetLDAPServer" : _("<p><b><big>Warning</big></b><br>
+In your system <b>localhost</b> is configured as the LDAP-server.
+But the <b>localhost</b> can not be LDAP-server for autofs becouse it can not achived from the clients.
+Please insert the IP-address or DNS-name of the LDAP-server suitable for the clients.
+We have suggested the fully qualified hostname of your server. If it is god push <b>OK</b>.
+<br></p>"),
+
+];
+
+/* EOF */
+}
