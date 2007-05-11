@@ -110,9 +110,9 @@ Please consult <b>autofs</b>(5) for more information.
     /* GetLDAPServer dialog if the ldapserver is localhost */
     "GetLDAPServer" : _("<p><b><big>Warning</big></b><br>
 In your system <b>localhost</b> is configured as the LDAP-server.
-But the <b>localhost</b> can not be LDAP-server for autofs becouse it can not achived from the clients.
+But the <b>localhost</b> can not be LDAP-server for autofs because it can not achieved from the clients.
 Please insert the IP-address or DNS-name of the LDAP-server suitable for the clients.
-We have suggested the fully qualified hostname of your server. If it is god push <b>OK</b>.
+We have suggested the fully qualified hostname of your server. If it is good push <b>OK</b>.
 <br></p>"),
 
 ];
