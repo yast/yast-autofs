@@ -88,14 +88,14 @@ entries or smbfs shares) a ':' needs to be prefixed.
     /* EntryDialog for NFS entry */
     "EntryDialogNFS" : _("<p><b><big>NFS Entry</big></b><br>
 In case of NFS entry the <b>Server</b> is the DNS-name or IP-address of the NFS-server.<br>
-The <b>Path</p> ist the absolute pfad of the directory on the NFS-server.<br>
+The <b>Path</p> is the absolute pfad of the directory on the NFS-server.<br>
 The <b>Options</b> must be valid options of the <b>mount</b>(8) command for NFS file system.<br>
 <br></p>"),
 
     /* EntryDialog for SAMBA entry */
     "EntryDialogSAMBA" : _("<p><b><big>SAMBA Entry</big></b><br>
 In case of SAMBA entry the <b>Server</b> is the DNS-name or IP-address of the SAMBA-server.<br>
-The <b>Share</p> ist the name of the share to be mounted.<br>
+The <b>Share</p> is the name of the share to be mounted.<br>
 The <b>Options</b> must be valid options of the <b>mount</b>(8) command for SMB/CIFS file system<br>
 <br></p>"),
 
