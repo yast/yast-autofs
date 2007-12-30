@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Sun Dec 30 21:05:18 CET 2007 - pv@suse.de
+
+-#336276 - Attempt to configure autofs via YaST2 results in a Perl error message 
+-fixing some typos
+- 2.15.3
+
+-------------------------------------------------------------------
 Fri May 11 16:55:23 CEST 2007 - varkoly@suse.de
 
 - #273198 - yast2 - autofs - typo 
