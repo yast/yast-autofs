@@ -566,7 +566,7 @@ sub Read {
 	
 	# TODO FIXME Names of real stages
 	# We do not set help text here, because it was set outside
-	Progress::New( $caption, " ", $steps, [
+	Progress->New( $caption, " ", $steps, [
 	        # Progress stage 1/2
 	        __("Check the ldap configuration"),
 	        # Progress stage 2/2
@@ -583,7 +583,7 @@ sub Read {
 	);
 	
 	# read database
-	Progress::NextStage();
+	Progress->NextStage();
 	# Error message
 	if(! $self->CheckLDAP())
 	{
@@ -600,7 +600,7 @@ sub Read {
 	    return Popup->Error($ERROR);
 	}
 	# read database
-	Progress::NextStage();
+	Progress->NextStage();
 	# Error message
 	if(! $self->ReadMaps())
 	{
@@ -619,7 +619,7 @@ sub Read {
 	sleep($sl);
 	
 	# Progress finished
-	Progress::NextStage();
+	Progress->NextStage();
 	sleep($sl);
 	
 	$modified = 0;
@@ -645,7 +645,7 @@ sub Write {
 	
 	# TODO FIXME Names of real stages
 	# We do not set help text here, because it was set outside
-	Progress::New($caption, " ", $steps, [
+	Progress->New($caption, " ", $steps, [
 	        # Progress stage 1/1
 	        __("Write the autofs maps")
 	    ], [
@@ -658,7 +658,7 @@ sub Write {
 	);
 	
 	# write settings
-	Progress::NextStage();
+	Progress->NextStage();
 	# Error message
 	if(! $self->WriteAutofsMapsToLDAP())
 	{
@@ -667,7 +667,7 @@ sub Write {
 	sleep($sl);
 	
 	# Progress finished
-	Progress::NextStage();
+	Progress->NextStage();
 	sleep($sl);
 	
 	return Boolean(1);
