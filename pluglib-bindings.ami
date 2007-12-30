@@ -1,5 +1,5 @@
 # -*- makefile -*- Automake include file
-# $Id: pluglib-bindings.ami 27327 2006-01-25 14:12:13Z mvidner $
+# $Id: pluglib-bindings.ami 35906 2007-02-06 15:26:47Z mvidner $
 
 # Wraps a pluglib for use by YaST. Done by using Swig for Perl, adding
 # type information. Compiles, installs.
@@ -43,7 +43,9 @@ $(TARGET_PM): %.pm: %_wrap.xml
 	if test -d $(PLUGLIB_MODULE); then \
 	  rm -f $(PLUGLIB_MODULE)/*.pm; \
 	fi
-	sabcmd $(PLGB_TYPEINFO_XSL) $< | perl $(PLGB_TYPEINFO_FILTER)
+	sabcmd $(PLGB_TYPEINFO_XSL) $< > $*.tpi
+	perl $(PLGB_TYPEINFO_FILTER) < $*.tpi
+	rm $*.tpi
 
 # Install the Perl modules
 PLGB_PMdir = $(moduledir)
