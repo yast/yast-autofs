@@ -88,7 +88,7 @@ entries or smbfs shares) a ':' needs to be prefixed.
     /* EntryDialog for NFS entry */
     "EntryDialogNFS" : _("<p><b><big>NFS Entry</big></b><br>
 In case of NFS entry the <b>Server</b> is the DNS-name or IP-address of the NFS-server.<br>
-The <b>Path</p> is the absolute pfad of the directory on the NFS-server.<br>
+The <b>Path</p> is the absolute path of the directory on the NFS-server.<br>
 The <b>Options</b> must be valid options of the <b>mount</b>(8) command for NFS file system.<br>
 <br></p>"),
 
