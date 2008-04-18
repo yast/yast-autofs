@@ -221,7 +221,7 @@ sub CheckLDAP
 	   if( $LDAPServer eq 'no' )
 	   {
 	       y2milestone("------UNSUITABLE_LDAP_SERVER------");
-	       return YaPI->SetError( summary => __("The localhost can not be LDAP server for autofs."),
+	       return YaPI->SetError( summary => __("The localhost cannot be LDAP server for autofs."),
 	                           code    => "UNSUITABLE_LDAP_SERVER" );
 	   }
 	}
@@ -237,7 +237,7 @@ sub CheckLDAP
 	if( ! $success )
 	{
 	   y2milestone("------CAN_NOT_BIND_LDAP------");
-	   return YaPI->SetError( summary => __("Faild to bind to the LDAP server."),
+	   return YaPI->SetError( summary => __("Failed to bind to the LDAP server."),
 	                           code    => "CAN_NOT_BIND_LDAP"  );
 	}
 

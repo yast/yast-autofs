@@ -21,7 +21,7 @@
                                    `HSpacing (30),
 				   `RichText(`id(`HelpText), HELPS["GetLDAPServer"]:""),
                                    // text entry label
-                                   `TextEntry(`id(`ldapserver), _("DNS Name or IP-address of the LDAP-server"), hostname),
+                                   `TextEntry(`id(`ldapserver), _("DNS Name or IP address of the LDAP server"), hostname),
                                    `VSpacing(0.2),
                                    // ok pushbutton: confirm the dialog
                                    `HBox(`PushButton(`id(`ok),     Label::OKButton()),
