@@ -52,17 +52,17 @@ Please wait...<br></p>
 ") +
 
     /* Write dialog help 2/2 */
-_("<p><b>Aborting Saving:</b><br>
+_("<p><b>Aborting Save:</b><br>
 Abort the save procedure by pressing <b>Abort</b>.
 </p>
 "),
 
     /* Configure dialog help 1/4 */
-    "ConfigureDialog" : _("<p><b>Automounter Maps</b><br>
-The automounter maps are maps referred to by the master
-map of the automounter. The automounter maps entries describe how
-file systems below the mountpoint of the map are to be mounted.
-<br></p>
+    "ConfigureDialog" : _("<p><b>Automounter Maps</b><br/>
+The automounter maps are referred to by the master map of the
+automounter. Entries in the automounter maps describe how file
+systems below the mountpoint of the map are to be mounted.
+<br/></p>
 ") +
 
     /* Configure dialog help 2/4 */
@@ -87,27 +87,26 @@ entries or smbfs shares) a ':' needs to be prefixed.
 
     /* EntryDialog for NFS entry */
     "EntryDialogNFS" : _("<p><b><big>NFS Entry</big></b><br>
-In case of NFS entry the <b>Server</b> is the DNS name or IP address of the NFS server.<br>
-The <b>Path</p> is the absolute path of the directory on the NFS server.<br>
-The <b>Options</b> must be valid options of the <b>mount</b>(8) command for NFS file system.<br>
-<br></p>
+In the case of NFS entries, the <b>Server</b> is the DNS name or IP address of the NFS server.<br/>
+The <b>Path</b> is the absolute path to the directory on the NFS server.<br/>
+The <b>Options</b> must be valid options of the <b>mount</b>(8) command for NFS file systems.<br/>
+<br/></p>
 "),
 
     /* EntryDialog for SAMBA entry */
-    "EntryDialogSAMBA" : _("<p><b>SAMBA Entry</b><br>
-In case of the SAMBA entry the <b>Server</b> is the DNS name or IP address of the SAMBA server.<br>
-The <b>Share</p> is the name of the share to be mounted.<br>
-The <b>Options</b> must be valid options of the <b>mount</b>(8) command for SMB/CIFS file system<br>
-<br></p>
+    "EntryDialogSAMBA" : _("<p><b>SAMBA Entry</b><br/>
+In the case of SAMBA entries, the <b>Server</b> is the DNS name or IP address of the SAMBA server.<br/>
+The <b>Share</b> is the name of the SAMBA share to be mounted.<br/>
+The <b>Options</b> must be valid options of the <b>mount</b>(8) command for SMB/CIFS file systems.<br>
+<br/></p>
 "),
 
     /* EntryDialog for Other entry */
-    "EntryDialogOther" : _("<p><b><big>Other Entry</big></b><br>
-The options are comma separated, as customary for the <b>mount</b>(8) command.<br>
+    "EntryDialogOther" : _("<p><b><big>Other Entry</big></b><br/>
+The options are comma separated, as customary for the <b>mount</b>(8) command.<br/>
 The location specifies from where the file system is to be mounted.
-Please consult <b>autofs</b>(5) for more information.
-<br></p>
-"),
+Please consult the <b>autofs</b>(5) manual page for more information.
+<br/></p>\n"),
 
     /* GetLDAPServer dialog if the ldapserver is localhost */
     "GetLDAPServer" : _("<p><b><big>Warning</big></b><br>

@@ -221,7 +221,7 @@ sub CheckLDAP
 	   if( $LDAPServer eq 'no' )
 	   {
 	       y2milestone("------UNSUITABLE_LDAP_SERVER------");
-	       return YaPI->SetError( summary => __("The localhost cannot be LDAP server for autofs."),
+	       return YaPI->SetError( summary => __("Cannot use localhost as the LDAP server for autofs."),
 	                           code    => "UNSUITABLE_LDAP_SERVER" );
 	   }
 	}
