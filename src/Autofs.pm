@@ -467,7 +467,7 @@ sub ReadEntriesOfMap
 		$Entry->{'key'}      = $all->{$dn}->{'cn'}->[0];
 		$Entry->{'dn'}       = $dn;
 		$Maps->{$map}->{dns}->{$dn} = 0;
-		my ($options,$location)    = split /\s+/,$all->{$dn}->{'nismapentry'}->[0],2;
+		my ($options,$location)    = split /\s+/,$all->{$dn}->{'nisMapEntry'}->[0],2;
 		$Entry->{'options'}  = $options;
 		$Entry->{'location'} = $location;
 		$Entry->{'modified'} = "0";
