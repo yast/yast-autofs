@@ -9,7 +9,10 @@ BuildArchitectures:	noarch
 Summary:	YaST2 - Module to Create and Manage autofs Entries in LDAP
 
 %description
--
+This makes possible to create and manage autofs entries in an LDAP
+server. The autofs entries will be created according the nis.schema
+using the objectclasses nisMap and nisObject. The entries are placed
+under ou=AUTOFS,$LDAPBASE.
 
 @PREP@
 
