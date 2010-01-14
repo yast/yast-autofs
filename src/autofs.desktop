@@ -17,9 +17,8 @@ X-SuSE-YaST-SortKey=
 X-SuSE-YaST-AutoInstResource=autofs
 
 Icon=yast-autofs
-Exec=/sbin/yast2 autofs 
+Exec=xdg-su -c "/sbin/yast2 autofs"
 
 Name=Autofs
 GenericName=autofs
-X-KDE-SubstituteUID=true
 StartupNotify=true
