@@ -2,6 +2,10 @@
 Thu Jan 28 10:39:39 CET 2010 - varkoly@novell.com
 
 - bnc#572823 - Error message in autofs configuration is incorrect
+
+-------------------------------------------------------------------
+Thu Jan  8 13:38:14 CET 2009 - varkoly@suse.de
+
 - bnc#464358 - error on console: Use of uninitialized value
 
 -------------------------------------------------------------------
