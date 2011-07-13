@@ -61,19 +61,19 @@ Abort the save procedure by pressing <b>Abort</b>.
     "ConfigureDialog" : _("<p><b>Automounter Maps</b><br/>
 The automounter maps are referred to by the master map of the
 automounter. Entries in the automounter maps describe how file
-systems below the mountpoint of the map are to be mounted.
+systems below the mount point of the map are to be mounted.
 <br/></p>
 ") +
 
     /* Configure dialog help 2/4 */
 _("<p><b><big>Key</big></b><br>
-This is the part of the pathname between the map mountpoint and
+This is the part of the pathname between the map mount point and
 the path into the filesystem mounted.
 </p>") +
 
     /* Configure dialog help 3/4 */
 _("<p><b><big>Options</big></b><br>
-The options are comma seperated, as customary for the <b>mount</b>(8) command.
+The options are comma separated, as customary for the <b>mount</b>(8) command.
 <br></p>
 ") +
 
