@@ -68,8 +68,8 @@ define string AddMapDialog () ``{
 	                           `TextEntry(`id(`mapname), _("Name of the map"), ""),
 	                           `VSpacing(0.2),
 	                           // ok pushbutton: confirm the dialog
-	                           `HBox(`PushButton(`id(`ok),     Label::OKButton()),
-	                                 `PushButton(`id(`cancel), Label::CancelButton())),
+	                           `ButtonBox(`PushButton(`id(`ok),     Label::OKButton()),
+	                                      `PushButton(`id(`cancel), Label::CancelButton())),
 	                           `VSpacing(0.2)),
 	                     `HSpacing(1)
 	                   ));
@@ -142,8 +142,8 @@ define map<string, string> EntryDialog (map<string, string> Entry) ``{
 				   ),
 				   `VSpacing(0.2),
 				   // ok pushbutton: confirm the dialog
-				   `HBox(`PushButton(`id(`ok),     Label::OKButton()),
-					 `PushButton(`id(`cancel), Label::CancelButton())),
+				   `ButtonBox(`PushButton(`id(`ok),     Label::OKButton()),
+					      `PushButton(`id(`cancel), Label::CancelButton())),
 				   `VSpacing(0.2)
 				),
 			     `HSpacing(1)
@@ -161,8 +161,8 @@ define map<string, string> EntryDialog (map<string, string> Entry) ``{
 				   `TextEntry(`id(`location), _("Location"), Entry["location"]:""),
 				   `VSpacing(0.2),
 				   // ok pushbutton: confirm the dialog
-				   `HBox(`PushButton(`id(`ok),     Label::OKButton()),
-					 `PushButton(`id(`cancel), Label::CancelButton())),
+				   `ButtonBox(`PushButton(`id(`ok),     Label::OKButton()),
+					      `PushButton(`id(`cancel), Label::CancelButton())),
 				   `VSpacing(0.2)),
 			     `HSpacing(1)
 			   )
@@ -277,14 +277,14 @@ define any ConfigureDialog () ``{
 	    `ReplacePoint(`id(`mapslist),
 	       `SelectionBox(`id(`maps), `opt(`notify), _("Maps"), LMaps)
 	    ),
-            `HBox(
+            `ButtonBox(
 		  `PushButton(`id(`addmap), _("Add")),
                   `PushButton(`id(`delmap), _("Delete"))
 		 ),
 	    `Table(`id(`entries), `header(_("Key"),_("Options"),_("Location")),[]),
-	    `HBox(
+	    `ButtonBox(
                   `PushButton(`id(`addentry), _("Add")),
-//                  `PushButton(`id(`modentry), _("Edit")),
+//                `PushButton(`id(`modentry), _("Edit")),
                   `PushButton(`id(`delentry), _("Delete"))
                  )
 	   );
