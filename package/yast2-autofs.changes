@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Sep 29 09:57:33 CEST 2011 - visnov@suse.cz
+
+- set dialog title
+- 2.21.1 
+
+-------------------------------------------------------------------
 Mon Sep 19 09:15:56 CEST 2011 - visnov@suse.cz
 
 - remove unneeded dialogs and dependency on Wizard_hw 
