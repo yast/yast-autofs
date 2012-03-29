@@ -38,7 +38,7 @@ map HELPS = $[
 
     /* Read dialog help 1/2 */
     "read" : _("<p><b>Initializing autofs configuration</b><br>
-Please wait...<br></p>
+</p>
 ") +
 
     /* Read dialog help 2/2 */
@@ -48,7 +48,7 @@ Safely abort the configuration utility by pressing <b>Abort</b> now.</p>
 
     /* Write dialog help 1/2 */
     "write" : _("<p><b>Saving autofs configuration</b><br>
-Please wait...<br></p>
+</p>
 ") +
 
     /* Write dialog help 2/2 */
@@ -103,18 +103,19 @@ The <b>Options</b> must be valid options of the <b>mount</b>(8) command for SMB/
 
     /* EntryDialog for Other entry */
     "EntryDialogOther" : _("<p><b><big>Other Entry</big></b><br/>
-The options are comma separated, as customary for the <b>mount</b>(8) command.<br/>
+The options are comma-separated, which is customary for the <b>mount</b>(8) command.<br/>
 The location specifies from where the file system is to be mounted.
-Please consult the <b>autofs</b>(5) manual page for more information.
-<br/></p>\n"),
+Consult the <b>autofs</b>(5) manual page for more information.
+<br/></p>
+"),
 
     /* GetLDAPServer dialog if the ldapserver is localhost */
-    "GetLDAPServer" : _("<p><b><big>Warning</big></b><br>
-In your system <b>localhost</b> is configured as the LDAP server.
-However, the clients cannot reach the <b>localhost</b> and therefore, it cannot be the LDAP server for autofs.
-Please insert an IP address or DNS name for the LDAP server that is suitable for the clients, or choose the suggested hostname of your server
-and press <b>Ok</b>.
-<br></p>"),
+    "GetLDAPServer" : _("<p><b><big>Warning</big></b><br> In your system <b>localhost</b> is configured
+as the LDAP server. Since clients cannot reach <b>localhost</b>, it
+cannot act as LDAP server for autofs.  Specify an IP address or DNS name of a
+suitable LDAP server or choose the suggested hostname of your server and press
+<b>Ok</b>.  <br></p>
+"),
 
 ];
 
