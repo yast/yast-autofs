@@ -210,7 +210,7 @@ sub CheckLDAP
 	   y2milestone("------LDAP_CLIENT_NOT_CONFIGURED------");
 	   return YaPI->SetError( summary => __("You must configure LDAP to use the autofs module.").
 					     "\n".
-					     __("You can do it by using the YaST ldap module."),
+					     __("Use the YaST LDAP module."),
 	                           code   => "LDAP_CLIENT_NOT_CONFIGURED" );
 	}
 	$LDAPServer = $ldapMap->{ldap_server};
