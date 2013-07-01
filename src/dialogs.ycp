@@ -36,6 +36,7 @@ import "Wizard";
 import "Autofs";
 
 include "autofs/helps.ycp";
+include "autofs/complex.ycp";
 
 
 /**
