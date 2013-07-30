@@ -9,6 +9,8 @@ BuildRequires:	update-desktop-files yast2 yast2-devtools
 
 BuildArchitectures:	noarch
 
+Requires:       yast2-ruby-bindings >= 1.0.0
+
 Summary:	YaST2 - Module to Create and Manage autofs Entries in LDAP
 
 %description
@@ -29,8 +31,8 @@ under ou=AUTOFS,$LDAPBASE.
 %defattr(-,root,root)
 %dir @yncludedir@/autofs
 @yncludedir@/autofs/*
-@clientdir@/autofs.ycp
-#@clientdir@/autofs_*.ycp
+@clientdir@/autofs.rb
+#@clientdir@/autofs_*.rb
 @moduledir@/Autofs*
 @desktopdir@/autofs.desktop
 %doc @docdir@
