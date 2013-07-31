@@ -1,28 +1,22 @@
-# Makefile.am for autofs/src
+# Sources for autofs
+
+module_DATA = \
+  modules/AutofsUI.rb \
+  modules/Autofs.pm
+
+client_DATA = \
+  clients/autofs.rb
 
 yncludedir = @yncludedir@/autofs
+ynclude_DATA = \
+  include/autofs/wizards.rb \
+  include/autofs/dialogs.rb \
+  include/autofs/complex.rb \
+  include/autofs/helps.rb
 
-client_DATA =			\
-	autofs.ycp		
+desktop_DATA = \
+  desktop/autofs.desktop
 
-ynclude_DATA =			\
-	helps.ycp		\
-	wizards.ycp		\
-	dialogs.ycp		\
-	complex.ycp
-
-desktop_DATA =			\
-	autofs.desktop
-
-module_DATA =			\
-	Autofs.pm		\
-	AutofsUI.ycp
-
-# create a symlink for local build, #145327
-autofs:
-	ln -sf . $@
-ycpchook = autofs
-
-EXTRA_DIST = $(client_DATA) $(ynclude_DATA) $(module_DATA) $(desktop_DATA)
+EXTRA_DIST = $(module_DATA) $(client_DATA) $(ynclude_DATA) $(desktop_DATA)
 
 include $(top_srcdir)/Makefile.am.common
